@@ -1,0 +1,283 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-light: 255, 255, 255;
+  --background-dark: 0, 0, 0;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+/* Wallpapers */
+.wallpaper-space {
+  background-image: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?auto=format&fit=crop&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease;
+}
+
+.wallpaper-mountains {
+  background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease;
+}
+
+.wallpaper-ocean {
+  background-image: url('https://images.unsplash.com/photo-1505144808419-1957a94ca61e?auto=format&fit=crop&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease;
+}
+
+.wallpaper-forest {
+  background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease;
+}
+
+/* Dark mode wallpapers */
+.dark .wallpaper-space {
+  background-image: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?auto=format&fit=crop&q=80');
+}
+
+.dark .wallpaper-mountains {
+  background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80');
+}
+
+.dark .wallpaper-ocean {
+  background-image: url('https://images.unsplash.com/photo-1478359844494-1092259d93e4?auto=format&fit=crop&q=80');
+}
+
+.dark .wallpaper-forest {
+  background-image: url('https://images.unsplash.com/photo-1516214104703-d870798883c5?auto=format&fit=crop&q=80');
+}
+
+/* Window animations */
+.window-animation {
+  animation: windowOpen 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.window-animation.fullscreen {
+  animation: windowFullscreen 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.window-animation.closing {
+  animation: windowClose 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Start menu animations */
+.start-menu-animation {
+  animation: startMenuOpen 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform-origin: bottom left;
+}
+
+.start-menu-animation.closing {
+  animation: startMenuClose 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Quick settings animations */
+.quick-settings-animation {
+  animation: quickSettingsOpen 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform-origin: bottom right;
+}
+
+.quick-settings-animation.closing {
+  animation: quickSettingsClose 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Backdrop animations */
+.backdrop-animation {
+  animation: backdropFade 0.2s ease forwards;
+}
+
+.backdrop-animation.closing {
+  animation: backdropFadeOut 0.2s ease forwards;
+}
+
+/* Button hover animations */
+.taskbar-button {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.taskbar-button:hover {
+  transform: translateY(-2px);
+}
+
+.taskbar-button.active {
+  transform: scale(0.95);
+}
+
+/* Animation keyframes */
+@keyframes windowOpen {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes windowClose {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes windowFullscreen {
+  0% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes startMenuOpen {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes startMenuClose {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+}
+
+@keyframes quickSettingsOpen {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes quickSettingsClose {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+}
+
+@keyframes backdropFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes backdropFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Window styles */
+.window-light {
+  @apply bg-white/95 text-gray-900 border-gray-200;
+}
+
+.window-dark {
+  @apply bg-gray-900/95 text-white border-white/10;
+}
+
+/* Taskbar styles */
+.taskbar-light {
+  @apply bg-white/90 border-gray-200;
+}
+
+.taskbar-dark {
+  @apply bg-gray-900/90 border-white/10;
+}
+
+/* Frosted glass effect */
+.frosted-light {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.frosted {
+  backdrop-filter: blur(12px);
+  background: rgba(17, 24, 39, 0.95);
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(31, 41, 55, 0.5);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(75, 85, 99, 0.5);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 114, 128, 0.5);
+}
+
+/* Menu item hover effects */
+.menu-item {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-item:hover {
+  transform: translateX(4px);
+}
+
+/* Toggle switch animation */
+.toggle-switch {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-switch-thumb {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
